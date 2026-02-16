@@ -1,3 +1,3 @@
-# chai aur backend series
+# Me and My backend series
 
-this is a video series on backend with javascript
+this is a series on backend with javascript

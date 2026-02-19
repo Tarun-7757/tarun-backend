@@ -12,6 +12,21 @@ dotenv.config({
 })
 
 connectDB()
+    .then(() => {
+        app.on("error",(error) => {          //this is a listner that handles and tell the database is connected but kya pata jo hamari express ki app hai wo baat ni kar paari
+            console.log("ERROR:", error);
+            throw error
+        })
+
+        app.listen(process.env.PORT || 8000, () => {
+            console.log(`Server is running at port:${process.env.PORT}`);
+        })
+    })
+    .catch((err) => {
+        console.log("MONGO db connection failed!!!", err);
+    })
+
+
     
     
 //change in environment variable requires manual restart;
